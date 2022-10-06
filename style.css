@@ -235,7 +235,7 @@ header .header-content .content p {
 }
 
 .services {
-     background-image: url(../images/3.jpg);
+     background-image: url(./images/team.jpg);
      width: 100%;
      background-size: cover;
      background-position: center;
@@ -374,7 +374,7 @@ header .header-content .content p {
 }
 
 .life-history {
-     background: url(../images/2.jpg);
+     background: url(./images/education.jpg);
      background-size: cover;
      background-position: center;
      background-attachment: fixed;
@@ -480,7 +480,7 @@ header .header-content .content p {
 }
 
 .contact {
-     background: url(../images/4.jpg);
+     background: url(./images/contact.jpg);
      background-position: center;
      background-size: cover;
      background-attachment: fixed;
