@@ -419,7 +419,71 @@
                <h2>Contact Me</h2>
                <div class="row">
                     <div class="col-lg-6 col-12">
-                         <form class="row g-3 needs-validation" novalidate>
+                         <form autocomplete="off" class="needs-validation" novalidate>
+                              <div class="mb-4">
+                                   <label for="username" class="form-label" required>Name</label>
+                                   <input type="text" class="form-control" id="username" placeholder="Enter your Name">
+                                   <div class="valid-feedback">
+                                        Looks good!
+                                   </div>
+                                   <small id="usernamevalid" class="form-text text-danger invalid-feedback">invalid
+                                        Format</small>
+                              </div>
+                              <div class="mb-4">
+                                   <label for="email" class="form-label">Email address</label>
+                                   <input type="text" class="form-control" id="email" aria-describedby="emailHelp"
+                                        autocomplete="off" placeholder="name@domain.com" required>
+                                   <div id="emailHelp" class="form-text"><svg xmlns="http://www.w3.org/2000/svg"
+                                             width="15" height="15" id="lockSvg" fill="currentColor"
+                                             class="bi bi-lock-fill me-1 mb-1" viewBox="0 0 16 16">
+                                             <path
+                                                  d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                        </svg>We'll <span>never</span> share your email with anyone else.</div>
+                                   <small id="emailvalid" class="form-text text-danger invalid-feedback">Email must be
+                                        valid!</small>
+                              </div>
+                              <div class="mb-4 phone">
+                                   <label for="phone" class="form-label">Phone</label>
+                                   <input type="text" class="form-control" id="phone" autocomplete="off"
+                                        placeholder="Enter 10 digit phone number" required>
+                                   <small id="phonevalid" class="form-text text-danger invalid-feedback">Phone must be
+                                        10 digits long.</small>
+                              </div>
+                              <div class="mb-4">
+                                   <label for="address" class="form-label">Messege</label>
+                                   <textarea name="address" id="address" class="form-control" autocomplete="off"
+                                        placeholder="Enter your Messege"></textarea>
+                              </div>
+                              <div class="mb-4 form-check">
+                                   <input type="checkbox" class="form-check-input" id="checkbox" required>
+                                   <label class="form-check-label" for="checkbox" required>I agree all terms and
+                                        Conditions</label>
+                              </div>
+                              <div class="mb-4 form-check">
+                                   <button class="btn btn-outline-success" type="submit">Send Contact Message</button>
+
+                              </div>
+
+                              <!--alerts-->
+
+                              <!-- Alerts -->
+                              <div id="successAlert" class="alert alert-success alert-dismissible fade show text-center"
+                                   role="alert">
+                                   <strong>Congrats!</strong> Your request has been successfully submitted ;)
+                                   <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                              </div>
+                              <div id="failAlert" class="alert alert-danger alert-dismissible fade show text-center"
+                                   role="alert">
+                                   <strong>Whoops!</strong> Something is wrong, try again/
+                                   <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                              </div>
+
+
+
+                         </form>
+                         <!--  <form class="row g-3 needs-validation" novalidate>
                               <div class="col-md-4">
                                    <label for="validationCustom01" class="form-label">First name</label>
                                    <input type="text" class="form-control" id="validationCustom01" value="Mark"
@@ -484,9 +548,9 @@
                                    </div>
                               </div>
                               <div class="col-12">
-                                   <button class="btn btn-primary" type="submit">Submit form</button>
+                                   <button class="btn btn-primary" type="submit">Send Messege to Roshith</button>
                               </div>
-                         </form>
+                         </form> -->
                          <!-- <form class="needs-validation" >
                               <label for="validationCustom01" class="form-label">First name</label>
                               <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
@@ -517,11 +581,11 @@
                     <div class="col-lg-6 col-12">
                          <div class="content">
                               <ul>
-                                   <li><a href="#!"><i class="fa fa-map-marker"></i>Sreergam, Kavumthazha, Koodali (PO),
+                                   <li><a href="#"><i class="fa fa-map-marker"></i>Sreergam, Kavumthazha, Koodali (PO),
                                              Kannur district, Kerala, India</a></li>
-                                   <li><a href="#!"><i class="fa fa-envelope"></i>roshith844@gmail.com</a></li>
-                                   <li><a href="#!"><i class="fa fa-phone"></i>+91 9562105300</a></li>
-                                   <li><a href="#!"><i class="fa fa-info"></i>Download Resume</a></li>
+                                   <li><a href="#"><i class="fa fa-envelope"></i>roshith844@gmail.com</a></li>
+                                   <li><a href="#"><i class="fa fa-phone"></i>+91 9562105300</a></li>
+                                   <li><a href="#"><i class="fa fa-info"></i>Download Resume</a></li>
                               </ul>
                          </div>
                     </div>
@@ -548,6 +612,65 @@
           </div>
      </footer><!-- footer end -->
      <script>
+          const username = document.getElementById("username");
+          const email = document.getElementById("email");
+          const phone = document.getElementById("phone");
+          let validUsername = false;
+          let validEmail = false;
+          let validPhone = false;
+          const successAlert = document.getElementById("successAlert");
+          const failAlert = document.getElementById("failAlert");
+          successAlert.style.display = "none";
+          failAlert.style.display = "none";
+          username.addEventListener("blur", () => {
+               let regex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
+               let str = username.value;
+               if (regex.test(str)) {
+                    username.classList.remove("is-invalid");
+                    validUsername = true;
+               } else {
+                    username.classList.add("is-invalid");
+                    validUsername = false;
+               }
+          });
+          email.addEventListener("blur", () => {
+               let emailHelp = document.getElementById("emailHelp");
+               let regex = /^([_\-\.a-zA-Z0-9]+)@([_\-\.a-zA-Z0-9]+)\.([a-zA-Z]){2,7}$/;
+               let str = email.value;
+               if (regex.test(str)) {
+                    emailHelp.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" id="lockSvg" fill="currentColor" class="bi bi-lock-fill me-1 mb-1" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+      </svg>We'll <span>never</span> share your email with anyone else.</div>`;
+                    email.classList.remove("is-invalid");
+                    validEmail = true;
+               } else {
+                    emailHelp.innerHTML = ``;
+                    email.classList.add("is-invalid");
+                    validEmail = false;
+               }
+          });
+          phone.addEventListener("blur", () => {
+               let regex = /^([0-9]){10}$/;
+               let str = phone.value;
+               if (regex.test(str)) {
+                    phone.classList.remove("is-invalid");
+                    validPhone = true;
+               } else {
+                    phone.classList.add("is-invalid");
+                    validPhone = false;
+               }
+          });
+          let submit = document.getElementById("submit");
+          submit.addEventListener("click", (e) => {
+               e.preventDefault();
+               if (validEmail && validUsername && validPhone) {
+                    successAlert.style.display = "block";
+               } else {
+                    failAlert.style.display = "block";
+               }
+          });
+
+          // bootstrap
           // Example starter JavaScript for disabling form submissions if there are invalid fields
           (function () {
                'use strict'
