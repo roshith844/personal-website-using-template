@@ -5,7 +5,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://kit.fontawesome.com/68c46d1680.js" crossorigin="anonymous"></script>
-
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -402,7 +402,6 @@
                                                   <p>You made it so simple. My new site is so much faster and easier to
                                                        work with than my old site. I just choose the page, make the
                                                        change and click save.
-
                                                        Thanks</p>
                                              </div>
                                         </div>
@@ -413,169 +412,37 @@
                </div>
           </div>
      </div><!-- testimonials end -->
-
      <div class="section contact" id="contact">
           <div class="container">
                <h2>Contact Me</h2>
                <div class="row">
                     <div class="col-lg-6 col-12">
-                         <form autocomplete="off" class="needs-validation" novalidate>
-                              <div class="mb-4">
-                                   <label for="username" class="form-label" required>Name</label>
-                                   <input type="text" class="form-control" id="username" placeholder="Enter your Name"
-                                        required>
-                                   <small id="usernamevalid" class="form-text text-danger invalid-feedback">invalid
-                                        Format</small>
+                         <form class="needs-validation" id="gform" method="POST"
+                              action="https://script.google.com/macros/s/AKfycbyNN9mhAWNpDqta9bNB3f4f9NY5Ou4z1O20JsQNHBRxj3ZYr6kMHzngfl9fvVMMPG9Lwg/exec">
+                              <div class="form-group">
+                                   <input type="text" id="fname" name="name" class="form-control" required
+                                        placeholder="Enter your Name">
                               </div>
-                              <div class="mb-4">
-                                   <label for="email" class="form-label">Email address</label>
-                                   <input type="text" class="form-control" id="email" aria-describedby="emailHelp"
-                                        autocomplete="off" placeholder="name@domain.com" required>
-                                   <div id="emailHelp" class="form-text"><svg xmlns="http://www.w3.org/2000/svg"
-                                             width="15" height="15" id="lockSvg" fill="currentColor"
-                                             class="bi bi-lock-fill me-1 mb-1" viewBox="0 0 16 16">
-                                             <path
-                                                  d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
-                                        </svg>We'll <span>never</span> share your email with anyone else.</div>
-                                   <small id="emailvalid" class="form-text text-danger invalid-feedback">Email must be
-                                        valid!</small>
+                              <div class="form-group">
+                                   <input type="email" id="lname" name="email" required placeholder="Enter your Email">
                               </div>
-                              <div class="mb-4 phone">
-                                   <label for="phone" class="form-label">Phone</label>
-                                   <input type="text" class="form-control" id="phone" autocomplete="off"
-                                        placeholder="Enter 10 digit phone number" required>
-                                   <small id="phonevalid" class="form-text text-danger invalid-feedback">Phone must be
-                                        10 digits long.</small>
-                              </div>
-                              <div class="mb-4">
-                                   <label for="address" class="form-label">Messege</label>
-                                   <textarea name="address" id="address" class="form-control" autocomplete="off"
-                                        placeholder="Enter your Messege"></textarea>
-                              </div>
-                              <div class="mb-4 form-check">
-                                   <input type="checkbox" class="form-check-input" id="checkbox" required>
-                                   <label class="form-check-label" for="checkbox" required>I agree all terms and
-                                        Conditions</label>
-                              </div>
-                              <div class="mb-4 form-check">
-                                   <button class="btn btn-outline-success" type="submit">Send Contact Message</button>
-
-                              </div>
-
-                              <!--alerts-->
-
-                              <!-- Alerts -->
-                              <div id="successAlert" class="alert alert-success alert-dismissible fade show text-center"
-                                   role="alert">
-                                   <strong>Congrats!</strong> Your request has been successfully submitted ;)
-                                   <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                              </div>
-                              <div id="failAlert" class="alert alert-danger alert-dismissible fade show text-center"
-                                   role="alert">
-                                   <strong>Whoops!</strong> Something is wrong, try again/
-                                   <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                              </div>
-
-
-
-                         </form>
-                         <!--  <form class="row g-3 needs-validation" novalidate>
-                              <div class="col-md-4">
-                                   <label for="validationCustom01" class="form-label">First name</label>
-                                   <input type="text" class="form-control" id="validationCustom01" value="Mark"
-                                        required>
+                              <div class="form-group">
+                                   <input id="subject-name" name="subject-name" type="text" required
+                                        placeholder="Enter your Subject">
                                    <div class="valid-feedback">
                                         Looks good!
                                    </div>
-                              </div>
-                              <div class="col-md-4">
-                                   <label for="validationCustom02" class="form-label">Last name</label>
-                                   <input type="text" class="form-control" id="validationCustom02" value="Otto"
-                                        required>
-                                   <div class="valid-feedback">
-                                        Looks good!
-                                   </div>
-                              </div>
-                              <div class="col-md-4">
-                                   <label for="validationCustomUsername" class="form-label">Username</label>
-                                   <div class="input-group has-validation">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                        <input type="text" class="form-control" id="validationCustomUsername"
-                                             aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                             Please choose a username.
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="col-md-6">
-                                   <label for="validationCustom03" class="form-label">City</label>
-                                   <input type="text" class="form-control" id="validationCustom03" required>
-                                   <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                   </div>
-                              </div>
-                              <div class="col-md-3">
-                                   <label for="validationCustom04" class="form-label">State</label>
-                                   <select class="form-select" id="validationCustom04" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        <option>...</option>
-                                   </select>
-                                   <div class="invalid-feedback">
-                                        Please select a valid state.
-                                   </div>
-                              </div>
-                              <div class="col-md-3">
-                                   <label for="validationCustom05" class="form-label">Zip</label>
-                                   <input type="text" class="form-control" id="validationCustom05" required>
-                                   <div class="invalid-feedback">
-                                        Please provide a valid zip.
-                                   </div>
-                              </div>
-                              <div class="col-12">
-                                   <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
-                                             required>
-                                        <label class="form-check-label" for="invalidCheck">
-                                             Agree to terms and conditions
-                                        </label>
-                                        <div class="invalid-feedback">
-                                             You must agree before submitting.
-                                        </div>
-                                   </div>
-                              </div>
-                              <div class="col-12">
-                                   <button class="btn btn-primary" type="submit">Send Messege to Roshith</button>
-                              </div>
-                         </form> -->
-                         <!-- <form class="needs-validation" >
-                              <label for="validationCustom01" class="form-label">First name</label>
-                              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-                              <div class="valid-feedback">
-                                Looks good!
-                              </div>
-                              <div class="form-group">
-                                   <input type="text" id="name" class="form-control" required placeholder="Enter your Name">
-                              </div>
-                              <div class="form-group">
-                                   <input type="text" id="subject" required placeholder="Enter your Subject"><div class="valid-feedback">
-                                        Looks good!
-                                      </div>
-                              </div>
-                              <div class="form-group">
-                                   <input type="email" id="email" required placeholder="Enter your Email">
                               </div>
                               <div class="form-group text-area">
-                                   <textarea id="message" required placeholder="Enter Message"></textarea>
+                                   <textarea id="subject" name="message" required
+                                        placeholder="Enter Message"></textarea>
                               </div>
                               <div class="form-group">
-                                   <button class="btn btn-outline-success" type="submit">Send Contact Message</button>
+                                   <button class="btn btn-outline-success" type="submit" value="Submit">Send Contact
+                                        Message</button>
                               </div>
-                         </form> -->
+                         </form>
                     </div>
-
-
                     <div class="col-lg-6 col-12">
                          <div class="content">
                               <ul>
@@ -608,98 +475,28 @@
                     <p>© 2022 Personal Portfolio.</p>
                </div>
           </div>
+
+
+
      </footer><!-- footer end -->
      <script>
-          const username = document.getElementById("username");
-          const email = document.getElementById("email");
-          const phone = document.getElementById("phone");
-          let validUsername = false;
-          let validEmail = false;
-          let validPhone = false;
-          const successAlert = document.getElementById("successAlert");
-          const failAlert = document.getElementById("failAlert");
-          successAlert.style.display = "none";
-          failAlert.style.display = "none";
-          username.addEventListener("blur", () => {
-               let regex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
-               let str = username.value;
-               if (regex.test(str)) {
-                    username.classList.remove("is-invalid");
-                    validUsername = true;
-               } else {
-                    username.classList.add("is-invalid");
-                    validUsername = false;
-               }
-          });
-          email.addEventListener("blur", () => {
-               let emailHelp = document.getElementById("emailHelp");
-               let regex = /^([_\-\.a-zA-Z0-9]+)@([_\-\.a-zA-Z0-9]+)\.([a-zA-Z]){2,7}$/;
-               let str = email.value;
-               if (regex.test(str)) {
-                    emailHelp.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" id="lockSvg" fill="currentColor" class="bi bi-lock-fill me-1 mb-1" viewBox="0 0 16 16">
-        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
-      </svg>We'll <span>never</span> share your email with anyone else.</div>`;
-                    email.classList.remove("is-invalid");
-                    validEmail = true;
-               } else {
-                    emailHelp.innerHTML = ``;
-                    email.classList.add("is-invalid");
-                    validEmail = false;
-               }
-          });
-          phone.addEventListener("blur", () => {
-               let regex = /^([0-9]){10}$/;
-               let str = phone.value;
-               if (regex.test(str)) {
-                    phone.classList.remove("is-invalid");
-                    validPhone = true;
-               } else {
-                    phone.classList.add("is-invalid");
-                    validPhone = false;
-               }
-          });
-          let submit = document.getElementById("submit");
-          submit.addEventListener("click", (e) => {
-               e.preventDefault();
-               if (validEmail && validUsername && validPhone) {
-                    successAlert.style.display = "block";
-               } else {
-                    failAlert.style.display = "block";
-               }
-          });
+          $("#submit-form").submit((e) => {
+               e.preventDefault()
+               $.ajax({
+                    url: "",
+                    data: $("#submit-form").serialize(),
+                    method: "post",
+                    success: function (response) {
+                         alert("Form submitted successfully")
+                         window.location.reload()
+                         //window.location.href="https://google.com"
+                    },
+                    error: function (err) {
+                         alert("Something Error")
 
-
-     </script>
-     <script>
-
-     </script>
-     <script>
-          // bootstrap
-          // Example starter JavaScript for disabling form submissions if there are invalid fields
-          (function () {
-               'use strict'
-
-               // Fetch all the forms we want to apply custom Bootstrap validation styles to
-               var forms = document.querySelectorAll('.needs-validation')
-
-               // Loop over them and prevent submission
-               Array.prototype.slice.call(forms)
-                    .forEach(function (form) {
-                         form.addEventListener('submit', function (event) {
-                              if (!form.checkValidity()) {
-                                   event.preventDefault()
-                                   event.stopPropagation()
-                              }
-
-                              form.classList.add('was-validated')
-
-
-                         }, false)
-                    })
-          })()
-     </script>
-     <script>
-
+                    }
+               })
+          })
      </script>
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
           integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
